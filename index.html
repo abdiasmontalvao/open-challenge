@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Campuse.ro</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <style>
+            #loading-screen {
+                background: url(img/loading.gif) center no-repeat #fff;
+                position: fixed;
+                width: 100%;
+                height: 100%;
+                z-index: 999;
+            }
+            
+            h4 {
+                color: #696969;
+            }
+            
+            #txt-wellcome, #txt-wellcome-2 {
+                display: none;
+            }
+            
+            .events {
+                min-height: 50px;
+                cursor: pointer;
+                transition: 0.2s;
+            }
+            
+            #event-1 > .event-img {
+                background: #6c6b6b;
+            }
+            
+            #event-2 > .event-img, #event-3 > .event-img {
+                background: #434343;
+            }
+        </style>
+    </head>
+    
+    <body>
+        <div id="loading-screen">
+            
+        </div>
+        <main>
+            <div class="container">
+                <br><br><br><br>
+                <div class="row justify-content-md-center">
+                    <div class="col-md-auto">
+                        <img class="img" src="img/campusero_logo.png">
+                    </div>
+                </div>
+                <br><br>
+                <div class="row justify-content-md-center">
+                    <div class="col-md-auto">
+                        <h4 id="txt-wellcome" class="text-center">Bem-vindo a nova plataforma!</h4>
+                        <h4 id="txt-wellcome-2" class="text-center">Para uma melhor expriência, escolha o evento que você deseja abaixo</h4>
+                    </div>
+                </div>
+                <br><br>
+                <div class="row" style="align-items: center;">
+                    <div id="event-2" class="col-4 events">
+                        <img class="img-fluid event-img" src="img/evt2.jpeg">
+                    </div>
+                    <div id="event-3" class="col-4 events">
+                        <img class="img-fluid event-img" src="img/evt3.jpeg">
+                    </div>
+                    <div id="event-1" class="col-4 events">
+                        <img class="img-fluid event-img" src="img/evt1.jpeg">
+                    </div>
+                </div>
+            </div>
+        </main>
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+        <script>
+            $(document).ready(function() {
+               $('#loading-screen').fadeOut(100);
+               $('#txt-wellcome').fadeIn(1000);
+               $('#txt-wellcome-2').fadeIn(2000);
+               $('.events').click(function() {
+                  window.location += 'event'; 
+               });
+            });
+            
+            $('.events').hover(
+                function() {
+                    $(this).removeClass('col-4');
+                    $(this).addClass('col-6');
+                    
+                    var actuarHovered = $(this);
+                    
+                    $('.events').each(function() {
+                       if ($(this) !== actuarHovered) {
+                           $(this).removeClass('col-4');
+                           $(this).addClass('col-3');
+                       } 
+                    });
+                },
+                function() {
+                    $(this).removeClass('col-6');
+                    $(this).addClass('col-4');
+                    
+                    var actuarHovered = $(this);
+                    
+                    $('.events').each(function() {
+                       if ($(this) !== actuarHovered) {
+                           $(this).removeClass('col-3');
+                           $(this).addClass('col-4');
+                       } 
+                    });
+                }
+            );
+        </script>
+    </body>
+</html>
