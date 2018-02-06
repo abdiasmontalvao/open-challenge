@@ -87,7 +87,7 @@
         <div id="loading-screen"></div>
 
         <nav id="navbar-principal" class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
-            <a class="navbar-brand" href="http://localhost/hackathon/event">
+            <a class="navbar-brand" href="http://<?= $_SERVER["HTTP_HOST"] ?>/event">
                 <img src="../img/campusero_logo.png">
             </a>
 
@@ -128,7 +128,7 @@
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="font-size: 1em; margin-left: -2em;">
                             <a class="dropdown-item" href="#" style="font-size: 1em;"><i class="material-icons" style="font-size: 1em;">confirmation_number</i> My tickets</a>
                             <a class="dropdown-item" href="#" style="font-size: 1em;"><i class="material-icons" style="font-size: 1em;">shopping_cart</i> My purchases</a>
-                            <a class="dropdown-item" href="http://localhost/hackathon/event/my-activities" style="font-size: 1em;"><i class="material-icons" style="font-size: 1em;">schedule</i> My activities</a>
+                            <a class="dropdown-item" href="http://<?= $_SERVER["HTTP_HOST"] ?>/event/my-activities" style="font-size: 1em;"><i class="material-icons" style="font-size: 1em;">schedule</i> My activities</a>
                             <div class="dropdown-divider" style="font-size: 1em;"></div>
                             <h6 class="text-center">Event selected</h6>
                             <a class="dropdown-item active" href="#" style="font-size: 1em;"><i class="material-icons" style="font-size: 1em;">event</i> CPBR11</a>

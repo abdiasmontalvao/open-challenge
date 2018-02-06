@@ -7,10 +7,14 @@ function resumir_descricao($string, $chars) {
         return $string;
 }
 
+ini_set('max_execution_time', 300); 
+
 $ch = curl_init();
 
 if (isset($_GET['slug'])) {
     curl_setopt($ch, CURLOPT_URL, 'https://sandboxapi.campuse.ro/agenda/activity/'.$_GET['slug'].'/');
+    curl_setopt ($ch, CURLOPT_SSL_VERIFYHOST, 0); 
+    curl_setopt($ch, CURLOPT_FAILONERROR, 1);
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 
     $server_output = curl_exec($ch);
